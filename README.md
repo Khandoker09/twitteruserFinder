@@ -7,6 +7,7 @@ a code can also work with this script.
 - Using pyinstaller one can easily build a windows executable file in .exe format
 - Using simple graphical user interface using tkinter 
 - Can search anything in any language
+- Extract users first and last name and job title(no all the cases) 
 ### Disadvantages:
 - User interface does not have a quite buttons 
 - Scrape only upto 1000 users 
