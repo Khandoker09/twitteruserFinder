@@ -4,7 +4,7 @@ Purpose: collect users info from twitter by search quary keywords.
 Methods : use tweepy and api key from my delveloper accounts 
 Author : Khandoker Tanjim Ahammad
 published : 2022- 02- 15
-Remakrs : still need to fix the rate limits 
+Remakrs : have to inprove and extract more information from the userdescription column
 
 '''
 import tkinter as tk
