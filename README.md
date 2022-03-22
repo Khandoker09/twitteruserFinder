@@ -1,7 +1,6 @@
 # twitteruserFinder
 Its a simple tool to manage twitter query in a excel file. using Twitter developer api, tweepy and tkinter this whole script was written. Because its uses twitter developer 
-api it can only scrape upto 1000 users informations.using tkinter i have made a very simple user interface so that any no tech background people who does not know how to write
-a code can also work with this script.
+api it can only scrape upto 1000 users informations.Using tkinter i have made a very simple user interface so that anyone with no tech background can also able to use this script.
 
 ### Advantages:
 - Using pyinstaller one can easily build a windows executable file in .exe format
