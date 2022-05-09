@@ -5,6 +5,7 @@ Methods : use tweepy and api key from my delveloper accounts
 Author : Khandoker Tanjim Ahammad
 published : 2022- 02- 15
 Remakrs : still need to fix the rate limits 
+Generation of .exe file : pyinstaller  --onefile  scriptname.py
 
 '''
 import tkinter as tk
