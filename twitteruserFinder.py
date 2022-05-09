@@ -73,7 +73,20 @@ my_label = tk.Label(root, text = "Enter the twitter query ")
 my_label.grid(row = 0, column = 0)
 my_entry = tk.Entry(root)
 my_entry.grid(row = 0, column = 1)
-
+#adding disclaimer
+my_label = tk.Label(root, text = "Twitter takes privacy seriously,\n \
+and we expect everyone using \n \
+Twitter Content and the Twitter\n \
+API to do the same.Any use of the\n \
+Twitter developer platform,Twitter\n \
+API, or Twitter Content in a manner\n \
+that is inconsistent with peoples’\n \
+reasonable expectations of privacy\n \
+may be subject to enforcement action,\n \
+which can include suspension and \n \
+termination of API and Twitter\n \
+Content access. ")
+my_label.grid(row = 5, column = 1)
 my_button = tk.Button(root, text = "Submit", command = my_function)
 my_button.grid(row = 1, column = 1)
 
