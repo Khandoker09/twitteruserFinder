@@ -21,7 +21,7 @@ import datetime
 current_date = datetime.datetime.now()
 # root window
 root = tk.Tk()
-root.geometry('500x200')
+root.geometry('500x300')
 root.resizable(0,0)
 root.title('Twitter Data GeneratorV-2.0')
 
