@@ -4,7 +4,7 @@ Purpose: collect users info from twitter by search quary keywords.
 Methods : use tweepy and api key from my delveloper accounts 
 Author : Khandoker Tanjim Ahammad
 published : 2022- 02- 15
-Remakrs : have to inprove and extract more information from the userdescription column
+Remakrs : still need to fix the rate limits 
 
 '''
 import tkinter as tk
@@ -23,14 +23,14 @@ current_date = datetime.datetime.now()
 root = tk.Tk()
 root.geometry('500x200')
 root.resizable(0,0)
-root.title('Twitter Data GeneratorV1.2')
+root.title('Twitter Data GeneratorV-2.0')
 
 def my_function():
     #twitter credentials
-    consumer_key = "your api key"
-    consumer_secret = "your api key"
-    access_key = "your api key"
-    access_secret = "your api key"
+    consumer_key = "API KEY"
+    consumer_secret = "API KEY"
+    access_key = "API KEY"
+    access_secret = "API KEY"
     # Pass your twitter credentials to tweepy via its OAuthHandler
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_key, access_secret)
@@ -57,15 +57,17 @@ def my_function():
     tweets_df = pd.DataFrame(tweets_list)
     tweets_df.columns = ['username','user_screenname','userid','userslocation','usersurl','usersdescription','userverified','followerscount','friendscount','statusescount','listedcount','createdat','profileimageurlhttps','defaultrofile']
     tweets_df[['firstname','lastname']] =   tweets_df['username'].loc[  tweets_df['username'].str.split().str.len() == 2].str.split(expand=True)
-    tweets_df=tweets_df[['username','firstname','lastname','user_screenname','userid','userslocation','usersdescription']]
+    tweets_df=tweets_df[['username','firstname','lastname','user_screenname','userid','userslocation','usersdescription','followerscount']]
     # use regex to figureout the company name  @([\w.-]+)\.
     tweets_df['employeecompany'] = tweets_df['usersdescription'].str.extract(r'@([\w.-]+)\.', expand=False) 
-    tweets_df=tweets_df[['username','firstname','lastname','employeecompany','user_screenname','userid','userslocation','usersdescription']]
+    tweets_df=tweets_df[['username','firstname','lastname','employeecompany','user_screenname','userid','userslocation','usersdescription','followerscount']]
     #tweets_df['POSTags'] = pos_tag_sents(tweets_df['usersdescription'].apply(word_tokenize).tolist())
     filename = str('twitter_search_list_')+str(current_date.year)+str('_')+str(current_date.month)+str('_')+str(current_date.day)
     print(tweets_df)
-    tweets_df.to_csv(str(filename + '.csv'),index=False)
+  
+    tweets_df.to_csv(str(text_query+filename + '.csv'),index=False)
     
+   
 
 my_label = tk.Label(root, text = "Enter the twitter query ")
 my_label.grid(row = 0, column = 0)
